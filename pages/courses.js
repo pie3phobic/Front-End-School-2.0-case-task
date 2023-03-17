@@ -7,6 +7,7 @@ import Image from "next/image";
 import Pagination from "../components/Pagination";
 import { paginate } from "../helpers/paginate";
 import styles from "../styles/Home.module.css";
+import Footer from "../components/Footer";
 
 function courses({ data }) {
   console.log(data);

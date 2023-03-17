@@ -21,12 +21,12 @@ function Banner() {
         {/* <h1 className="text-center">Improve your skills faster</h1> */}
         <img src="student-cr.jpg" width="700px" className="rounded-3xl"></img>
       </div>
-      <div className="flex justify-between">
+      {/* <div className="flex justify-between">
         <h1 className="text-2xl font-semibold pt-6">
           Improve your skills faster
-        </h1>
-        {/* <SideTab /> */}
-      </div>
+        </h1> */}
+      {/* <SideTab /> */}
+      {/* </div> */}
       <div className=""></div>
       {/* <div className="absolute top-1/2 w-full text-center">
         <p className="text-sm sm:text-lg"></p>

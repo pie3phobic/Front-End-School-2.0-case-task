@@ -157,6 +157,7 @@ function course({ data }) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
