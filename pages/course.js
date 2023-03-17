@@ -32,15 +32,37 @@ function course({ data }) {
   const [isEnded, setIsEnded] = React.useState(false);
   const playerRef = useRef();
   const lessonRef = useRef(null);
+  const [isReady, setIsReady] = React.useState(false);
   const onEnded = useCallback(() => {
     if (!isEnded) {
-      //const timeToStart = 7 * 60 + 12.6;
       playerRef.current.getDuration() == played;
       setIsEnded(true);
-      //window.localStorage.setItem("isEnded", isEnded);
+      //window.localStorage.setItem("isEnded", true);
       console.log("Lesson Finished!");
     }
+    //штука
+    // const video_url = playerRef.current.props.url;
+    // const videoDurations = { video_url: video_url, duration: played };
+    // window.localStorage.setItem(
+    //   "videoDurations",
+    //   JSON.stringify(videoDurations)
+    // );
+    // console.log(playerRef.current.props.url);
   }, [isEnded]);
+  const onReady = useCallback(() => {
+    if (!isReady) {
+      const videoDurations =
+        JSON.parse(window.localStorage.getItem("videoDurations")) || {};
+      if (JSON.stringify(videoDurations) !== "{}") {
+        let timestamp = videoDurations[playerRef.current.props.url];
+        if (timestamp > 0) {
+          playerRef.current.seekTo(timestamp, "seconds");
+          playerRef.current.play();
+        }
+      }
+      setIsReady(true);
+    }
+  }, [isReady]);
   return (
     <div className="">
       <Header />
@@ -96,7 +118,7 @@ function course({ data }) {
                 url={videoUrl}
                 onEnded={onEnded}
                 playing={isPlaying}
-                // onReady={onReady}
+                onReady={onReady}
                 // light={true}
                 //playing={true}
                 muted={true}
@@ -104,6 +126,21 @@ function course({ data }) {
                 onProgress={(progress) => {
                   setPlayed(progress.playedSeconds);
                   // console.log(played);
+                  const video_url = playerRef.current.props.url;
+                  const videoDurations =
+                    JSON.parse(window.localStorage.getItem("videoDurations")) ||
+                    {};
+                  // const videoDuration = {};
+                  videoDurations[video_url] = played;
+                  //   video_url: video_url,
+                  //   duration: played,
+                  // };
+                  // videoDurations.(videoDuration);
+                  window.localStorage.setItem(
+                    "videoDurations",
+                    JSON.stringify(videoDurations)
+                  );
+                  // console.log(playerRef.current.props.url);
                 }}
               />
             </div>
