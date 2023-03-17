@@ -12,9 +12,6 @@ function LessonCard({
   title,
   type,
 }) {
-  //   const handleClick = () => {
-  //     console.log(link);
-  //   };
   return (
     <div>
       <div
@@ -22,7 +19,10 @@ function LessonCard({
         // onClick={handleClick}
       >
         {/* <img src={previewImageLink + "/" + order + ".webp"}></img> */}
-        <img src="https://wisey.app/assets/images/web/course-covers/lack-of-motivation-how-to-overcome-it/preview/1.webp"></img>
+        <img
+          src="https://wisey.app/assets/images/web/course-covers/lack-of-motivation-how-to-overcome-it/preview/1.1.webp"
+          width="100px"
+        ></img>
         <p className="flex-grow">
           {order}. {title}
         </p>

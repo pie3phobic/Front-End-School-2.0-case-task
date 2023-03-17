@@ -6,8 +6,6 @@ function Sidebar() {
   const openCourses = () => {
     router.push({
       pathname: "/courses",
-      // query: {
-      // },
     });
   };
   return (
@@ -21,19 +19,15 @@ function Sidebar() {
         </h2>
       </div>
       <div className="bg-gray-100 px-10 py-8 rounded-3xl w-[250px] text-center font-semibold">
-        {/* SideBarRow */}
         <div className="bg-gray-300/60 py-2 px-2 rounded-xl mb-6 hover:bg-red-400/50 transition duration-150 cursor-pointer">
           <p className="text-gray-700">Arts & Humanities</p>
         </div>
-        {/* SideBarRow */}
         <div className="bg-gray-300/60 py-2 px-2 rounded-xl mb-6  hover:bg-red-400/50 transition duration-150 cursor-pointer">
           <p className="text-gray-700 ">Business</p>
         </div>
-        {/* SideBarRow */}
         <div className="bg-gray-300/60 py-2 px-2 rounded-xl mb-6  hover:bg-red-400/50 transition duration-150 cursor-pointer">
           <p className="text-gray-700">Computer Science</p>
         </div>
-        {/* SideBarRow */}
         <div className="bg-gray-300/60 py-2 px-2 rounded-xl mb-6  hover:bg-red-400/50 transition duration-150 cursor-pointer">
           <p className="text-gray-700">Data Science</p>
         </div>

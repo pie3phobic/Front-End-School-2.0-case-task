@@ -14,23 +14,6 @@ function courses({ data }) {
   const coursesData = data.courses;
   console.log(coursesData);
   const router = useRouter();
-  //ES6 Destructuting
-  //   const
-  //{
-  //     containsLockedLessons,
-  //     description,
-  //     duration,
-  //     id,
-  //     launchDate,
-  //     lessonsCount,
-  //     meta,
-  //     prewiewImageLink,
-  //     rating,
-  //     status,
-  //     tags,
-  //     title,
-  //   } = data;
-  //   console.log(description);
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10;
 
@@ -82,6 +65,7 @@ function courses({ data }) {
           pageSize={pageSize} // 10
           onPageChange={onPageChange}
         />
+        {/* <Footer /> */}
       </div>
     </div>
   );

@@ -15,21 +15,8 @@ function Header({ placeholder }) {
   const openCourses = () => {
     router.push({
       pathname: "/courses",
-      // query: {
-      // },
     });
   };
-  // const search = () => {
-  //   router.push({
-  //     pathname: "/search",
-  //     query: {
-  //       location: searchInput,
-  //       startDate: startDate.toISOString(),
-  //       endDate: endDate.toISOString(),
-  //       noOfGuests,
-  //     },
-  //   });
-  // };
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 bg-white py-5 px-5 md:px-10">
       {/* Left */}
@@ -52,11 +39,12 @@ function Header({ placeholder }) {
       </div>
       {/* Right */}
       <div className="flex items-center space-x-4 justify-end text-gray-600">
-        <p className="hidden md:inline cursor-pointer" onClick={openCourses}>
+        <p
+          className="hidden md:inline cursor-pointer text-lg"
+          onClick={openCourses}
+        >
           Courses
         </p>
-        <p className="hidden md:inline cursor-pointer">About us</p>
-        {/* <GlobeAltIcon className="h-6 cursor-pointer" /> */}
         <div className=" flex items-center space-x-2 border-2 p-2 rounded-full">
           <MenuIcon className="h-6" />
           <UserCircleIcon className="h-6" />

@@ -4,7 +4,6 @@ import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import SideTab from "../components/SideTab";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import MediumCard from "../components/MediumCard";
@@ -14,12 +13,9 @@ export default function Home() {
   const openCourses = () => {
     router.push({
       pathname: "/courses",
-      // query: {
-      // },
     });
   };
   return (
-    // <div className={styles.container}>
     <div className="">
       <Head>
         <title>My Project</title>

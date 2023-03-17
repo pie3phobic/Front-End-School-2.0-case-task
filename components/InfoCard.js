@@ -29,32 +29,11 @@ function InfoCard({
       },
     });
   };
-  // const { slug, skills, courseVideoPreview } = meta;
-  //console.log(skills);
-  //console.log(courseVideoPreview);
-  //console.log(skills);
   const [playVideo, setPlayVideo] = useState(false);
-  const handleMouseEnter = (e) => {
-    // const vid = e.target;
-    // vid.muted = true;
-    // vid.play();
-  };
-
-  // handle mouse leave
-  const handleMouseLeave = (e) => {
-    // const vid = e.target;
-    // vid.muted = false;
-    // vid.currentTime = 0;
-    // vid.pause();
-  };
   return (
-    // <div className="">
-    //   <p>{description}</p>
-    //   {/* <p>{previewImageLink}</p> */}
-    //   <img src={previewImageLink + "/cover.webp"}></img>
-    // </div>
     <div
-      className="flex py-7 px-2 pr-4 gap-10 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t last:border-t-0"
+      className="flex py-7 px-2 pr-4 gap-10 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t last:border-t-0 "
+      onClick={openItem}
       // onMouseEnter={useEffect((e) => {
       //   setPlayVideo(true);
       // }, [])}
@@ -81,9 +60,7 @@ function InfoCard({
       </div>
       <div className="flex flex-col flex-grow pl-5">
         <div className="flex justify-between">
-          <p className="text-xl font-semibold" onClick={openItem}>
-            {title}
-          </p>
+          <p className="text-xl font-semibold">{title}</p>
           <HeartIcon className="h-7 cursor-pointer" />
         </div>
         <h4 className="text-black/60 font-semibold">{description}</h4>
@@ -91,13 +68,6 @@ function InfoCard({
         <p className="pt-2 text-sm text-red-400">
           Number of lessons: {lessonsCount}
         </p>
-        {/* {console.log(skills)} */}
-        {/* {console.log(skills)} */}
-        {/* {skills.map((item) => console.log(item))} */}
-        {/* {[meta.skills].map((item) => console.log(item))} */}
-        {/* {[meta.skills]?.map((item, value) =>
-          item?.map((value) => console.log(value))
-        )} */}
         <div className="flex-grow">
           {[meta.skills]?.map((item, value) =>
             item?.map((value) => <p className="text-black/70">{value}</p>)
@@ -108,10 +78,6 @@ function InfoCard({
             <StarIcon className="h-5 text-red-400" />
             {rating}
           </p>
-          {/* <div>
-            <p className="text-lg lg:text-2xl font-semibold pb-2">{price}</p>
-            <p className="text-right font-extralight">{total}</p>
-          </div> */}
         </div>
       </div>
     </div>
