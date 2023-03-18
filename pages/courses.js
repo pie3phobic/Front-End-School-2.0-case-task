@@ -66,7 +66,6 @@ function courses({ data }) {
           pageSize={pageSize} // 10
           onPageChange={onPageChange}
         />
-        {/* <Footer /> */}
       </div>
     </div>
   );

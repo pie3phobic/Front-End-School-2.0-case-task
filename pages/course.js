@@ -10,44 +10,28 @@ import { CheckIcon } from "@heroicons/react/outline";
 import Footer from "../components/Footer";
 
 function course({ data }) {
-  console.log(data);
+  //console.log(data);
   const router = useRouter();
-  // console.log(data.meta.courseVideoPreview.link);
-  console.log(data.lessons[0].previewImageLink);
-  console.log(data.lessons[0].order);
   const lessonData = data.lessons;
-  console.log(lessonData);
-  console.log(lessonData.length);
-  const [videoUrl, setVideoUrl] = useState(data.meta.courseVideoPreview.link);
+  //console.log(lessonData);
+  const [videoUrl, setVideoUrl] = useState(data.meta.courseVideoPreview?.link);
   const [nowPlaying, setNowPlaying] = useState("Course Intro");
   const [lockedContent, setLockedContent] = useState(false);
+  if (data.meta.courseVideoPreview?.link === void 0)
+    useEffect(() => {
+      setLockedContent(true);
+    }, []);
   const [played, setPlayed] = useState(0);
-  //console.log(data.previewImageLink);
   const [isPlaying, setIsPlaying] = React.useState(true);
-  // const [isEnded, setIsEnded] = React.useState(
-  //   typeof window !== "undefined"
-  //     ? window.localStorage.getItem("isEnded")
-  //     : false
-  // );
   const [isEnded, setIsEnded] = React.useState(false);
   const playerRef = useRef();
-  //const lessonRef = useRef(null);
   const [isReady, setIsReady] = React.useState(false);
   const onEnded = useCallback(() => {
     if (!isEnded) {
       playerRef.current.getDuration() == played;
       setIsEnded(true);
-      //window.localStorage.setItem("isEnded", true);
       console.log("Lesson Finished!");
     }
-    //штука
-    // const video_url = playerRef.current.props.url;
-    // const videoDurations = { video_url: video_url, duration: played };
-    // window.localStorage.setItem(
-    //   "videoDurations",
-    //   JSON.stringify(videoDurations)
-    // );
-    // console.log(playerRef.current.props.url);
   }, [isEnded]);
   const onReady = useCallback(() => {
     if (!isReady) {
@@ -108,10 +92,6 @@ function course({ data }) {
             </div>
           </div>
           <div className="flex flex-col  lg:flex-row lg:justify-between">
-            {/* <img
-          src={data.lessons[0].previewImageLink + "/0.webp"}
-          className="rounded-2xl"
-        /> */}
             <div>
               <ReactPlayer
                 ref={playerRef}
@@ -119,9 +99,7 @@ function course({ data }) {
                 onEnded={onEnded}
                 playing={isPlaying}
                 onReady={onReady}
-                // light={true}
-                //playing={true}
-                muted={true}
+                muted={false}
                 controls={true}
                 onProgress={(progress) => {
                   setPlayed(progress.playedSeconds);
@@ -130,17 +108,11 @@ function course({ data }) {
                   const videoDurations =
                     JSON.parse(window.localStorage.getItem("videoDurations")) ||
                     {};
-                  // const videoDuration = {};
                   videoDurations[video_url] = played;
-                  //   video_url: video_url,
-                  //   duration: played,
-                  // };
-                  // videoDurations.(videoDuration);
                   window.localStorage.setItem(
                     "videoDurations",
                     JSON.stringify(videoDurations)
                   );
-                  // console.log(playerRef.current.props.url);
                 }}
               />
             </div>
@@ -160,9 +132,7 @@ function course({ data }) {
                 type,
               }) => (
                 <div
-                  //ref={lessonRef}
                   onClick={() => {
-                    //console.log(lessonRef.current.id);
                     setNowPlaying(
                       "Lesson " + { order }.order + " '" + { title }.title + "'"
                     );
@@ -172,6 +142,7 @@ function course({ data }) {
                       setLockedContent(false);
                     } else {
                       setLockedContent(true);
+                      setIsEnded(false);
                       setVideoUrl("");
                     }
                   }}
@@ -194,7 +165,6 @@ function course({ data }) {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }
@@ -203,7 +173,6 @@ export default course;
 export async function getServerSideProps(context) {
   const id = context.query.id;
   // Fetch data from external API
-  //const courseId = "352be3c6-848b-4c19-9e7d-54fe68fef183";
   const host = "http://api.wisey.app";
   const version = "api/v1";
   const accessToken = await fetch(

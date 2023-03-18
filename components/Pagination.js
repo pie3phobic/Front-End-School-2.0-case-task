@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 const Pagination = ({ items, pageSize, currentPage, onPageChange }) => {
-  const pagesCount = Math.ceil(items / pageSize); // 100/10
+  const pagesCount = Math.ceil(items / pageSize);
 
   if (pagesCount === 1) return null;
   const pages = Array.from({ length: pagesCount }, (_, i) => i + 1);
@@ -15,8 +15,7 @@ const Pagination = ({ items, pageSize, currentPage, onPageChange }) => {
               page === currentPage ? styles.pageItemActive : styles.pageItem
             }
           >
-            <a onClick={() => onPageChange(page)
-            }>{page}</a>
+            <a onClick={() => onPageChange(page)}>{page}</a>
           </li>
         ))}
       </ul>

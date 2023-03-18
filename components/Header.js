@@ -1,6 +1,4 @@
-import Image from "next/image";
 import {
-  GlobeAltIcon,
   MenuIcon,
   UserCircleIcon,
   UsersIcon,
