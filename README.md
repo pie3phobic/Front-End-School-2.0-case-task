@@ -1,4 +1,20 @@
+This is my case project created for Front-end school 2.0:
+
+Completed tasks:
+-	Set up a landing page for the website.
+-	Created courses.js page that displays information about the courses (courses` photos, titles, rating, skills, number of lessons).
+-	Added pagination to display 10 courses on each page (in total we got 3 pages).
+Page with all courses can be reached upon clicking on “Go to courses” button on main page, courses link in web-site header, or “Explore all” on main page's sidebar.
+After clicking on any course a course.js page will load with specified course`s data.
+-	The course-preview video will automatically play after page has loaded.
+-	In the Lessons panel you can select another lesson and after clicking it the corresponding video will play.
+-	After finishing the lesson there will be a message notifying you that the lesson has ended.
+-	Progress of watched video is saved in local storage even after switching to another course
+-	User can see which video is playing by looking into the “Now playing” field. 
+-	If the lesson is locked user will be informed about that and the video will not play.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
 
@@ -11,22 +27,6 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
