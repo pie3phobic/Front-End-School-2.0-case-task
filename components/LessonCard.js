@@ -13,17 +13,20 @@ function LessonCard({
   type,
 }) {
   return (
-    <div>
+    <div className="">
       <div
-        className="flex rounded-2xl bg-white h-24 w-[300px] py-8 my-2 mx-auto cursor-pointer align-middle active:bg-red-400"
+        className="flex rounded-2xl bg-white h-28 w-[400px] my-2 mx-auto cursor-pointer items-center active:bg-red-400"
         // onClick={handleClick}
       >
-        {/* <img src={previewImageLink + "/" + order + ".webp"}></img> */}
         <img
-          src="https://wisey.app/assets/images/web/course-covers/lack-of-motivation-how-to-overcome-it/preview/1.1.webp"
-          width="100px"
+          src={previewImageLink + "/lesson-" + order + ".webp"}
+          className="rounded-2xl w-32 h-[75px] mx-4"
         ></img>
-        <p className="flex-grow">
+        {/* <img
+          src="https://wisey.app/assets/images/web/course-covers/lack-of-motivation-how-to-overcome-it/preview/lesson-1/lesson-1.webp"
+          width="100px"
+        ></img> */}
+        <p className="flex-grow ">
           {order}. {title}
         </p>
         {status == "locked" && (

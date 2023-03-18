@@ -19,6 +19,7 @@ function courses({ data }) {
 
   const onPageChange = (page) => {
     setCurrentPage(page);
+    window.scrollTo({ top: 20, behavior: "smooth" });
   };
 
   const paginatedPosts = paginate(coursesData, currentPage, pageSize);

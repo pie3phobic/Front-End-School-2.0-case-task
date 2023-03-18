@@ -31,7 +31,7 @@ function course({ data }) {
   // );
   const [isEnded, setIsEnded] = React.useState(false);
   const playerRef = useRef();
-  const lessonRef = useRef(null);
+  //const lessonRef = useRef(null);
   const [isReady, setIsReady] = React.useState(false);
   const onEnded = useCallback(() => {
     if (!isEnded) {
@@ -67,7 +67,7 @@ function course({ data }) {
     <div className="">
       <Header />
       <div className="ml-10">
-        <div>
+        <div className="">
           <div className="flex flex-col">
             <h1 className="text-3xl font-semibold pb-2">{data.title}</h1>
             <p className="pb-6 text-lg">{data.description}</p>
@@ -107,7 +107,7 @@ function course({ data }) {
               </div>
             </div>
           </div>
-          <div className="flex justify-between">
+          <div className="flex flex-col  lg:flex-row lg:justify-between">
             {/* <img
           src={data.lessons[0].previewImageLink + "/0.webp"}
           className="rounded-2xl"
@@ -145,7 +145,7 @@ function course({ data }) {
               />
             </div>
           </div>
-          <div className="flex flex-col bg-gray-200 h-[560px] w-[400px] overflow-scroll rounded-3xl absolute top-80 right-0 pb-8 scrollbar-hide">
+          <div className="flex flex-col bg-gray-200 h-[560px] lg:w-[500px] overflow-scroll rounded-3xl lg:absolute pb-8 scrollbar-hide md:w-[642px] lg:top-80 lg:right-0">
             <p className="pl-10 pt-6 pb-4 text-xl font-semibold">Lessons:</p>
             {lessonData.map(
               ({
@@ -160,9 +160,9 @@ function course({ data }) {
                 type,
               }) => (
                 <div
-                  ref={lessonRef}
+                  //ref={lessonRef}
                   onClick={() => {
-                    console.log(lessonRef.current.id);
+                    //console.log(lessonRef.current.id);
                     setNowPlaying(
                       "Lesson " + { order }.order + " '" + { title }.title + "'"
                     );

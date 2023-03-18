@@ -32,7 +32,7 @@ function InfoCard({
   const [playVideo, setPlayVideo] = useState(false);
   return (
     <div
-      className="flex py-7 px-2 pr-4 gap-10 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t last:border-t-0 "
+      className="flex flex-col lg:flex-row py-4 lg:py-7 px-4 gap-10 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t last:border-t-0 "
       onClick={openItem}
       // onMouseEnter={useEffect((e) => {
       //   setPlayVideo(true);
@@ -41,7 +41,7 @@ function InfoCard({
       //   setPlayVideo(false);
       // }, [])}
     >
-      <div className="relative h-24 w-40 md:h-64 md:w-[400px] flex-shrink-0">
+      <div className="relative w-[380px] h-[190px] lg:w-[380px] lg:h-[220px] md:w-full md:h-[300px] flex-shrink-0 self-center">
         {/* {playVideo == true && (
           <ReactPlayer url={this.meta.courseVideoPreview} />
         )}

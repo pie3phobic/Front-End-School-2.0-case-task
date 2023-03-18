@@ -31,29 +31,29 @@ export default function Home() {
         </div>
       </div>
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
-        <a className="text-5xl font-semibold text-red-400">Improve</a>
-        <a className="text-5xl font-semibold"> your skills faster</a>
-        <div className="flex justify-center align-middle pt-8">
-          <img src="study-img.png" className="w-[700px]"></img>
-        </div>
-        <a className="text-5xl font-semibold absolute right-[520px]">
-          Study with
+        <a className=" text-3xl lg:text-5xl font-semibold">
+          Improve <span className="text-red-400">your skills faster</span>
         </a>
-        <a className="text-5xl font-semibold absolute right-24 text-red-400">
-          your own schedule
+        <div className="flex justify-center align-middle pt-8">
+          <img src="study-img.png" className=" w-[400px] md:w-[700px]"></img>
+        </div>
+        <a className="text-3xl lg:text-5xl font-semibold absolute lg:right-[100px]">
+          Study with <span className="text-red-400">your own schedule</span>
         </a>
         <div className="flex justify-center pt-24 align-middle">
-          <img src="stud2-img.png" className="w-[700px]"></img>
+          <img src="stud2-img.png" className="w-[400px] md:w-[700px]"></img>
         </div>
         <div className="flex justify-center pt-10">
           <button
-            className="bg-red-400 rounded-full text-white font-semibold px-6 py-2 text-4xl shadow-md hover:shadow-lg active:scale-105 transform transition duration-200 ease-out"
+            className="bg-red-400 rounded-full text-white font-semibold px-6 py-2  text-2xl md:text-4xl shadow-md hover:shadow-lg active:scale-105 transform transition duration-200 ease-out"
             onClick={openCourses}
           >
             Go To Courses
           </button>
         </div>
-        <MediumCard />
+        <div className="w-[300px] mx-auto lg:w-full">
+          <MediumCard />
+        </div>
       </main>
       <Footer />
     </div>

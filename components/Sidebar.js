@@ -9,7 +9,7 @@ function Sidebar() {
     });
   };
   return (
-    <div className="p-2 md:p-10 py-6 overflow-y-auto">
+    <div className="hidden lg:block p-2 md:p-10 py-6 overflow-y-auto">
       <div className="flex flex-col items-center justify-center mb-10">
         <h1 className="hidden md:inline text-center text-3xl mt-2 mb-2 font-semibold">
           Explore
