@@ -37,6 +37,8 @@ After clicking on any course a course.js page will load with specified course`s 
 
 Щоб зберігати тривалість переглянутого відео локально, ми створюємо об’єкт в localStorage, де ключі — унікальні URL-адреси відео, а його значення — секунди часу перегляду. Коли відео завантажується в ReactPlayer, ми шукаємо поле з тією ж URL-адресою, що й URL-адреса, яку ми хочемо відтворити, і використовуємо функцію seekTo(), щоб відео відтворювалося з цієї позначки часу. Значення часової позначки оновлюється під час відтворення відео, що означає, що кожну секунду перегляду це значення перевизначається.
 
+Дякую! <3
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 
