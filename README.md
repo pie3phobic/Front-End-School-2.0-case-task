@@ -28,6 +28,8 @@ After clicking on any course a course.js page will load with specified course`s 
 -	User can see which video is playing by looking into the “Now playing” field. 
 -	If the lesson is locked user will be informed about that and the video will not play.
 
+**Image credits: Freepic
+
 ## Опис:
 Цей проєкт створено з використанням Next.JS, TailwindCSS та декількома плагінами для стилізації невеликих деталей. Дані з API отримуємо за допомогою функції Next.JS під назвою getServerSideProps (рендеринг на стороні сервера). Next.js попередньо рендерить цю сторінку цю сторінку на сервері за кожним запитом клієнта, використовуючи дані, які повертає getServerSideProps. Для відображення даних на сторінках ми ітеруємося по даних отриманих в response.JSON і передаємо дані компонентам, які їх відображатимуть.
 
