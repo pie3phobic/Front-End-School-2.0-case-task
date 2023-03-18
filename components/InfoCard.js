@@ -34,23 +34,8 @@ function InfoCard({
     <div
       className="flex flex-col lg:flex-row py-4 lg:py-7 px-4 gap-10 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t last:border-t-0 "
       onClick={openItem}
-      // onMouseEnter={useEffect((e) => {
-      //   setPlayVideo(true);
-      // }, [])}
-      // onMouseLeave={useEffect((e) => {
-      //   setPlayVideo(false);
-      // }, [])}
     >
       <div className="relative w-[380px] h-[190px] lg:w-[380px] lg:h-[220px] md:w-full md:h-[300px] flex-shrink-0 self-center">
-        {/* {playVideo == true && (
-          <ReactPlayer url={this.meta.courseVideoPreview} />
-        )}
-        {playVideo == false && (
-          <img
-            src={previewImageLink + "/cover.webp"}
-            className="rounded-2xl"
-          ></img>
-        )} */}
         <Image
           src={previewImageLink + "/cover.webp"}
           layout="fill"

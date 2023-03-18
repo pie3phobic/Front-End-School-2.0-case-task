@@ -61,7 +61,7 @@ function courses({ data }) {
           )
         )}
         <Pagination
-          items={coursesData.length} // 100
+          items={coursesData.length}
           currentPage={currentPage} // 1
           pageSize={pageSize} // 10
           onPageChange={onPageChange}
