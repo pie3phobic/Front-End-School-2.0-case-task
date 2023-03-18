@@ -55,7 +55,11 @@ function InfoCard({
         </p>
         <div className="flex-grow">
           {[meta.skills]?.map((item, value) =>
-            item?.map((value) => <p className="text-black/70">{value}</p>)
+            item?.map((value, index) => (
+              <p key={`skill-${index}`} className="text-black/70">
+                {value}
+              </p>
+            ))
           )}
         </div>
         <div className="flex items-end pt-5">

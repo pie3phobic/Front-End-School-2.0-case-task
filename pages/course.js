@@ -9,7 +9,7 @@ import { StarIcon } from "@heroicons/react/solid";
 import { CheckIcon } from "@heroicons/react/outline";
 import Footer from "../components/Footer";
 
-function course({ data }) {
+function Course({ data }) {
   //console.log(data);
   const router = useRouter();
   const lessonData = data.lessons;
@@ -17,10 +17,9 @@ function course({ data }) {
   const [videoUrl, setVideoUrl] = useState(data.meta.courseVideoPreview?.link);
   const [nowPlaying, setNowPlaying] = useState("Course Intro");
   const [lockedContent, setLockedContent] = useState(false);
-  if (data.meta.courseVideoPreview?.link === void 0)
-    useEffect(() => {
-      setLockedContent(true);
-    }, []);
+  useEffect(() => {
+    if (data.meta.courseVideoPreview?.link === void 0) setLockedContent(true);
+  }, []);
   const [played, setPlayed] = useState(0);
   const [isPlaying, setIsPlaying] = React.useState(true);
   const [isEnded, setIsEnded] = React.useState(false);
@@ -71,7 +70,11 @@ function course({ data }) {
               </div>
               <div className="flex-grow">
                 {[data.meta.skills]?.map((item, value) =>
-                  item?.map((value) => <p className="text-black/70">{value}</p>)
+                  item?.map((value, index) => (
+                    <p key={`skill-${index}`} className="text-black/70">
+                      {value}
+                    </p>
+                  ))
                 )}
               </div>
               <p className="font-semibold pt-4 text-lg">
@@ -133,6 +136,7 @@ function course({ data }) {
                 type,
               }) => (
                 <div
+                  key={id}
                   onClick={() => {
                     setNowPlaying(
                       "Lesson " + { order }.order + " '" + { title }.title + "'"
@@ -170,7 +174,7 @@ function course({ data }) {
   );
 }
 
-export default course;
+export default Course;
 export async function getServerSideProps(context) {
   const id = context.query.id;
   // Fetch data from external API

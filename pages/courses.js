@@ -9,7 +9,7 @@ import { paginate } from "../helpers/paginate";
 import styles from "../styles/Home.module.css";
 import Footer from "../components/Footer";
 
-function courses({ data }) {
+function Courses({ data }) {
   console.log(data);
   const coursesData = data.courses;
   console.log(coursesData);
@@ -71,7 +71,7 @@ function courses({ data }) {
   );
 }
 
-export default courses;
+export default Courses;
 export async function getServerSideProps() {
   // Fetch data from external API
   const host = "http://api.wisey.app";
