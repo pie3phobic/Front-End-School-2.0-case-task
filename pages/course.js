@@ -92,10 +92,11 @@ function course({ data }) {
             </div>
           </div>
           <div className="flex flex-col  lg:flex-row lg:justify-between">
-            <div>
+            <div className="pr-10 lg:pr-0">
               <ReactPlayer
                 ref={playerRef}
                 url={videoUrl}
+                width="100%"
                 onEnded={onEnded}
                 playing={isPlaying}
                 onReady={onReady}
@@ -117,7 +118,7 @@ function course({ data }) {
               />
             </div>
           </div>
-          <div className="flex flex-col bg-gray-200 h-[560px] lg:w-[500px] overflow-scroll rounded-3xl lg:absolute pb-8 scrollbar-hide md:w-[642px] lg:top-80 lg:right-0">
+          <div className="flex flex-col bg-gray-200 h-[560px] w-[310px] lg:w-[500px] overflow-scroll rounded-3xl lg:absolute pb-8 scrollbar-hide md:w-[686px] lg:top-80 lg:right-0">
             <p className="pl-10 pt-6 pb-4 text-xl font-semibold">Lessons:</p>
             {lessonData.map(
               ({
