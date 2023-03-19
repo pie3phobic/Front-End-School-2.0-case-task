@@ -2,7 +2,7 @@
 # This is my case project created for Front-end school 2.0
 
 # Demo:
-https://front-end-school-2-0-case-task-igvf-eu1x738l8-pie3phobic.vercel.app
+https://front-end-school-2-0-case-task.vercel.app/
 
 ### Description [ Також опис українською доступний внизу :)  ] ->
 
