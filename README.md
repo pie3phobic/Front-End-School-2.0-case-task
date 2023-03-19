@@ -32,6 +32,7 @@ After clicking on any course a course.js page will load with specified course`s 
 -	Progress of watched video is saved in local storage even after switching to another course
 -	User can see which video is playing by looking into the “Now playing” field. 
 -	If the lesson is locked user will be informed about that and the video will not play.
+- Responsive adaptation for phone/tablet devices.
 
 **Image credits: Freepic
 
