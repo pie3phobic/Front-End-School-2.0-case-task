@@ -10,9 +10,7 @@ import styles from "../styles/Home.module.css";
 import Footer from "../components/Footer";
 
 function Courses({ data }) {
-  console.log(data);
   const coursesData = data.courses;
-  console.log(coursesData);
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10;
@@ -23,7 +21,6 @@ function Courses({ data }) {
   };
 
   const paginatedPosts = paginate(coursesData, currentPage, pageSize);
-  console.log(paginatedPosts);
   return (
     <div>
       <Header />

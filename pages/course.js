@@ -10,10 +10,8 @@ import { CheckIcon } from "@heroicons/react/outline";
 import Footer from "../components/Footer";
 
 function Course({ data }) {
-  //console.log(data);
   const router = useRouter();
   const lessonData = data.lessons;
-  //console.log(lessonData);
   const [videoUrl, setVideoUrl] = useState(data.meta.courseVideoPreview?.link);
   const [nowPlaying, setNowPlaying] = useState("Course Intro");
   const [lockedContent, setLockedContent] = useState(false);
@@ -29,22 +27,19 @@ function Course({ data }) {
     if (!isEnded) {
       playerRef.current.getDuration() == played;
       setIsEnded(true);
-      console.log("Lesson Finished!");
     }
   }, [isEnded]);
   const onReady = useCallback(() => {
-    if (!isReady) {
-      const videoDurations =
-        JSON.parse(window.localStorage.getItem("videoDurations")) || {};
-      if (JSON.stringify(videoDurations) !== "{}") {
-        let timestamp = videoDurations[playerRef.current.props.url];
-        if (timestamp > 0) {
-          playerRef.current.seekTo(timestamp, "seconds");
-          playerRef.current.play();
-        }
+    const videoDurations =
+      JSON.parse(window.localStorage.getItem("videoDurations")) || {};
+    if (JSON.stringify(videoDurations) !== "{}") {
+      let timestamp = videoDurations[playerRef.current.props.url];
+      if (timestamp > 0) {
+        playerRef.current.seekTo(timestamp, "seconds");
+        playerRef.current.play();
       }
-      setIsReady(true);
     }
+    setIsReady(true);
   }, [isReady]);
   return (
     <div className="">
@@ -107,7 +102,6 @@ function Course({ data }) {
                 controls={true}
                 onProgress={(progress) => {
                   setPlayed(progress.playedSeconds);
-                  // console.log(played);
                   const video_url = playerRef.current.props.url;
                   const videoDurations =
                     JSON.parse(window.localStorage.getItem("videoDurations")) ||

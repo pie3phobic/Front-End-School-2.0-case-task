@@ -18,8 +18,6 @@ function InfoCard({
   tags,
   title,
 }) {
-  console.log(description);
-  console.log(meta);
   const router = useRouter();
   const openItem = (e) => {
     router.push({
